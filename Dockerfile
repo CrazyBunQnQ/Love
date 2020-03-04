@@ -1,5 +1,5 @@
 # nginx 镜像
-FROM arm32v7/nginx:latest as build-stage
+FROM arm32v7/nginx:1.17.8
 # 维护者信息
 MAINTAINER CrazyBunQnQ "crazybunqnq@gmail.com"
 
@@ -14,4 +14,5 @@ COPY . /usr/share/nginx/html
 RUN mv /usr/share/nginx/html/nginx.conf /etc/nginx/
 
 # 暴露端口
-EXPOSE 80
+EXPOSE 1314
+# docker run -itd --name love -p 1314:1314 --restart=always love
